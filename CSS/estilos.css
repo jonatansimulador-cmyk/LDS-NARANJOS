@@ -1,0 +1,42 @@
+/* FUENTES Y COMPONENTES GLOBALES */
+.font-temple { font-family: 'Cinzel', serif; }
+.font-body { font-family: 'Lato', sans-serif; }
+.glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+
+/* ANIMACIONES Y TABS */
+.fade-in { animation: fadeIn 0.5s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.5s; }
+
+/* BOTONES DEL MENÚ LATERAL */
+.nav-btn.active { background-color: #f1f5f9; color: #002855; border-right: 4px solid #002855; }
+.nav-btn-admin.active { background-color: #fef2f2; color: #b91c1c; border-right: 4px solid #b91c1c; }
+
+/* SCROLLBAR PERSONALIZADO */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+/* COMPONENTES DEL TEMPLO 3D (Index) */
+.temple-scene { perspective: 1200px; }
+.stone-3d { background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%); box-shadow: 2px 2px 10px rgba(0,0,0,0.1), inset -2px -2px 6px rgba(0,0,0,0.05), inset 2px 2px 6px rgba(255,255,255,1); border: 1px solid #cbd5e1; }
+.pillar-3d { background: linear-gradient(to right, #cbd5e1 0%, #f8fafc 30%, #ffffff 60%, #94a3b8 100%); box-shadow: 3px 0 6px rgba(0,0,0,0.15), inset -2px 0 4px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+.gold-3d { background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); box-shadow: 0 0 15px rgba(212, 175, 55, 0.6); }
+.window-3d { background: linear-gradient(to bottom, #0f172a, #334155); box-shadow: inset 0 4px 8px rgba(0,0,0,0.6), 0 1px 1px rgba(255,255,255,0.5); border: 2px solid #64748b; }
+.arch-inner { background: linear-gradient(to bottom, #cbd5e1, #f1f5f9); box-shadow: inset 0 10px 20px rgba(0,0,0,0.15); border-bottom: none; }
+.door-container { position: relative; transform-style: preserve-3d; box-shadow: inset 0 15px 30px rgba(0,0,0,0.15); }
+.door { position: absolute; top: 0; width: 50%; height: 100%; background: linear-gradient(145deg, #ffffff, #e2e8f0); transition: transform 1.8s cubic-bezier(0.4, 0.0, 0.2, 1); z-index: 20; display: flex; align-items: center; }
+.door::before { content: ''; position: absolute; top: 6%; bottom: 6%; left: 10%; right: 10%; border: 1px solid #cbd5e1; background: #ffffff; box-shadow: inset 2px 2px 5px rgba(0,0,0,0.03), 2px 2px 5px rgba(0,0,0,0.05); border-radius: 4px; }
+.door::after { content: ''; position: absolute; width: 8px; height: 65px; background: linear-gradient(to right, #bf953f, #fcf6ba, #aa771c); border-radius: 4px; box-shadow: 2px 4px 6px rgba(0,0,0,0.3); }
+.door-left { left: 0; transform-origin: left; border-right: 1px solid #cbd5e1; }
+.door-left::after { right: 15px; }
+.door-right { right: 0; transform-origin: right; border-left: 1px solid #cbd5e1; }
+.door-right::after { left: 15px; }
+.doors-open .door-left { transform: rotateY(-105deg); }
+.doors-open .door-right { transform: rotateY(105deg); }
+.login-form-container { opacity: 0; transform: scale(0.92) translateY(10px); transition: opacity 1.2s ease 0.6s, transform 1.2s ease 0.6s; }
+.doors-open .login-form-container { opacity: 1; transform: scale(1) translateY(0); z-index: 10; }
+.msg-toast { transition: opacity 0.3s ease; opacity: 0; pointer-events: none; }
+.msg-toast.show { opacity: 1; }
+.grass-field { background: radial-gradient(ellipse at top, #65a30d 0%, #3f6212 100%); border-top: 3px solid #84cc16; box-shadow: inset 0 20px 30px rgba(0,0,0,0.2); }
