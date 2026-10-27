@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión y Registro - Iglesia SUD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="bg-gradient-to-b from-[#e0f2fe] to-[#f1f5f9] min-h-screen flex flex-col items-center justify-start md:justify-center pt-8 md:pt-0 font-body relative overflow-x-hidden">
+
+    <div class="fixed bottom-0 left-0 w-full h-[15vh] md:h-[25vh] grass-field z-0 rounded-t-[50%] md:rounded-t-[30%]"></div>
+
+    <div class="w-full max-w-6xl relative flex flex-col items-center mt-2 md:mt-6 z-10 pb-24 md:pb-10">
+        
+        <div class="text-center pb-4 md:pb-6 flex flex-col items-center relative w-full drop-shadow-md z-30">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Symbol_of_The_Church_of_Jesus_Christ_of_Latter-day_Saints.svg/320px-Symbol_of_The_Church_of_Jesus_Christ_of_Latter-day_Saints.svg.png" 
+                 alt="Símbolo Iglesia SUD" class="h-16 md:h-20 object-contain mb-2 md:mb-3 drop-shadow-lg">
+            <h2 class="text-lg md:text-2xl font-temple font-bold text-[#002855] tracking-[0.15em] uppercase text-shadow">Santidad al Señor</h2>
+            <p class="text-[9px] md:text-xs font-temple text-gray-600 uppercase tracking-[0.2em] mt-1 font-bold">La Casa del Señor</p>
+        </div>
+
+        <div class="temple-scene w-full relative flex justify-center items-end px-4 z-10">
+            <div class="hidden lg:flex flex-col items-end pb-0 relative z-0">
+                <div class="w-36 h-4 stone-3d rounded-t-sm"></div>
+                <div class="w-48 h-6 stone-3d rounded-t-sm flex justify-evenly items-end pb-1"></div>
+                <div class="w-64 h-56 stone-3d flex justify-between items-end pb-0 px-2">
+                    <div class="w-6 h-full pillar-3d z-10"></div>
+                    <div class="w-16 h-36 arch-inner rounded-t-full relative flex justify-center items-end pb-2"><div class="w-8 h-20 window-3d rounded-t-full"></div></div>
+                    <div class="w-6 h-full pillar-3d z-10"></div>
+                    <div class="w-16 h-36 arch-inner rounded-t-full relative flex justify-center items-end pb-2"><div class="w-8 h-20 window-3d rounded-t-full"></div></div>
+                    <div class="w-6 h-full pillar-3d z-10"></div>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center relative z-20 w-full max-w-[28rem]">
+                <div class="flex flex-col items-center w-full z-0 -mb-1">
+                    <div class="w-1.5 h-6 md:h-8 gold-3d rounded-sm mb-0"></div>
+                    <div class="w-5 md:w-6 h-1.5 md:h-2 gold-3d rounded-full mb-0.5 shadow-md"></div>
+                    <div class="w-8 md:w-10 h-6 md:h-8 pillar-3d rounded-t-full border-b-0"></div>
+                    <div class="w-12 md:w-14 h-10 md:h-12 pillar-3d flex justify-center items-end pb-1"><div class="w-4 md:w-5 h-6 md:h-8 window-3d rounded-t-full"></div></div>
+                    <div class="w-20 md:w-24 h-20 md:h-28 pillar-3d flex justify-evenly items-end pb-3"><div class="w-4 md:w-5 h-12 md:h-16 window-3d rounded-t-full"></div><div class="w-4 md:w-5 h-12 md:h-16 window-3d rounded-t-full"></div></div>
+                    <div class="w-32 md:w-40 h-6 md:h-8 stone-3d shadow-md z-10"></div>
+                    <div class="w-[110%] h-8 md:h-12 stone-3d shadow-lg z-20"></div>
+                </div>
+                
+                <div class="w-full stone-3d p-3 md:p-4 pb-0 rounded-t-xl shadow-2xl relative z-30 flex justify-between items-end gap-2 md:gap-3">
+                    <div class="w-6 md:w-8 h-[26rem] md:h-[32rem] pillar-3d rounded-t-md shrink-0 shadow-[4px_0_10px_rgba(0,0,0,0.1)] z-40 relative"></div>
+                    
+                    <div id="door-frame" class="door-container h-[26rem] md:h-[32rem] w-full bg-white border-4 border-gray-200 rounded-t-[4rem] md:rounded-t-[5rem] relative overflow-hidden z-30 shadow-inner">
+                        <div class="door door-left rounded-tl-[4rem] md:rounded-tl-[5rem]"></div>
+                        <div class="door door-right rounded-tr-[4rem] md:rounded-tr-[5rem]"></div>
+
+                        <div class="login-form-container absolute inset-0 px-5 sm:px-8 bg-white/95 rounded-t-[4rem] md:rounded-t-[5rem] backdrop-blur-sm overflow-y-auto custom-scrollbar pt-10 md:pt-14 pb-8">
+                            <div id="login-section" class="w-full flex flex-col justify-center min-h-full transition-opacity duration-300 relative">
+                                <h3 class="text-center text-[#002855] font-temple font-bold mb-4 md:mb-6 text-lg md:text-xl border-b-2 border-gray-100 pb-2 md:pb-3">Acceso al Sistema</h3>
+                                <form id="form-login">
+                                    <div class="mb-4 md:mb-5">
+                                        <label for="login-dni" class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-widest mb-1.5">DNI o Usuario</label>
+                                        <input type="text" id="login-dni" class="w-full px-3 md:px-4 py-2.5 md:py-3 border-b-2 border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:border-[#002855] transition-colors duration-300 text-sm" placeholder="Ingresa tu DNI o admin" required>
+                                    </div>
+                                    <div class="mb-6 md:mb-8">
+                                        <label for="login-password" class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-widest mb-1.5">Contraseña</label>
+                                        <input type="password" id="login-password" class="w-full px-3 md:px-4 py-2.5 md:py-3 border-b-2 border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:border-[#002855] transition-colors duration-300 text-sm" placeholder="••••••••" required>
+                                    </div>
+                                    <button type="submit" id="btn-login" class="w-full bg-[#002855] hover:bg-[#001b3a] text-white font-body font-bold tracking-widest py-3 md:py-3.5 px-4 rounded shadow-lg transition duration-300 border-b-4 border-[#001124] active:border-b-0 active:translate-y-1 text-sm">INGRESAR</button>
+                                </form>
+                                <div id="login-msg" class="msg-toast absolute -top-4 md:-top-8 left-0 right-0 text-center text-[10px] md:text-sm font-bold p-2 rounded"></div>
+                                <div class="mt-4 md:mt-6 text-center"><p class="text-[10px] md:text-xs text-gray-500">¿No tienes cuenta? <button id="showRegisterBtn" class="text-[#002855] font-bold hover:underline ml-1 uppercase">Regístrate</button></p></div>
+                            </div>
+
+                            <div id="register-section" class="w-full hidden transition-opacity duration-300 mt-2 relative pb-8">
+                                <h3 class="text-center text-[#002855] font-temple font-bold mb-4 text-md border-b-2 border-gray-100 pb-2">Registro de Líder</h3>
+                                <form id="form-register">
+                                    <div class="mb-3"><label class="block text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Nombre Completo</label><input type="text" id="reg-nombre" class="w-full px-3 py-1.5 border-b-2 border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:border-[#002855] transition-colors duration-300 text-xs" required></div>
+                                    <div class="mb-3"><label class="block text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Número Celular</label><input type="tel" id="reg-celular" class="w-full px-3 py-1.5 border-b-2 border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:border-[#002855] transition-colors duration-300 text-xs" required></div>
+                                    <div class="mb-3">
+                                        <label class="block text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Cargo</label>
+                                        <select id="reg-cargo" class="w-full px-3 py-1.5 border-b-2 border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:border-[#002855] transition-colors duration-300 text-[10px] text-gray-700" required>
+                                            <option value="" disabled selected>Selecciona tu cargo</option>
+                                            <option value="Obispado (Obispo y dos consejeros)">Obispado (Obispo y dos consejeros)</option>
+                                            <option value="Presidencia del Cuórum de Élderes">Presidencia del Cuórum de Élderes</option>
+                                            <option value="Presidencia de la Sociedad de Socorro">Presidencia de la Sociedad de Socorro</option>
+                                            <option value="Presidencia de las Mujeres Jóvenes">Presidencia de las Mujeres Jóvenes</option>
+                                            <option value="Asesores de los Hombres Jóvenes">Asesores de los Hombres Jóvenes</option>
+                                            <option value="Presidencia de la Primaria">Presidencia de la Primaria</option>
+                                            <option value="Presidencia de la Escuela Dominical">Presidencia de la Escuela Dominical</option>
+                                            <option value="JAS (Jóvenes Adultos Solteros)">JAS (Jóvenes Adultos Solteros)</option>
+                                            <option value="Líder de Obra Misional del Barrio">Líder de Obra Misional del Barrio</option>
+                                            <option value="Líder de Templo e Historia Familiar del Barrio">Líder de Templo e Historia Familiar del Barrio</option>
+                                            <option value="Secretario de Barrio">Secretario de Barrio</option>
+                                            <option value="Secretario Ejecutivo">Secretario Ejecutivo</option>
+                                            <option value="Secretario del Cuórum de Élderes">Secretario del Cuórum de Élderes</option>
+                                            <option value="Secretaria de la Sociedad de Socorro">Secretaria de la Sociedad de Socorro</option>
+                                            <option value="Secretaria de las Mujeres Jóvenes">Secretaria de las Mujeres Jóvenes</option>
+                                            <option value="Secretaria de la Primaria">Secretaria de la Primaria</option>
+                                            <option value="Secretario de la Escuela Dominical">Secretario de la Escuela Dominical</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3"><label class="block text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">DNI (Usuario)</label><input type="text" id="reg-dni" class="w-full px-3 py-1.5 border-b-2 border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:border-[#002855] transition-colors duration-300 text-xs" required></div>
+                                    <div class="mb-4"><label class="block text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Crear Contraseña</label><input type="password" id="reg-password" class="w-full px-3 py-1.5 border-b-2 border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:border-[#002855] transition-colors duration-300 text-xs" placeholder="••••••••" required></div>
+                                    <button type="submit" id="btn-register" class="w-full bg-[#002855] hover:bg-[#001b3a] text-white font-body font-bold tracking-widest py-2.5 px-4 rounded shadow-lg transition duration-300 text-[10px] border-b-4 border-[#001124] active:border-b-0 active:translate-y-1">REGISTRAR</button>
+                                </form>
+                                <div id="register-msg" class="msg-toast absolute -top-4 left-0 right-0 text-center text-[10px] font-bold p-1 rounded"></div>
+                                <div class="mt-4 text-center"><p class="text-[10px] text-gray-500">¿Ya tienes cuenta? <button id="showLoginBtn" class="text-[#002855] font-bold hover:underline ml-1 uppercase">Inicia sesión</button></p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-6 md:w-8 h-[26rem] md:h-[32rem] pillar-3d rounded-t-md shrink-0 shadow-[-4px_0_10px_rgba(0,0,0,0.1)] z-40 relative"></div>
+                </div>
+
+                <div id="action-container" class="absolute inset-x-0 bottom-10 md:bottom-16 flex justify-center z-50 transition-opacity duration-500">
+                    <button id="openDoorsBtn" class="bg-gradient-to-b from-[#003b7a] to-[#001b3a] hover:from-[#004a99] hover:to-[#002855] text-white font-temple font-bold tracking-widest py-3 md:py-4 px-10 md:px-12 rounded-full shadow-[0_10px_20px_rgba(0,0,0,0.4)] transition-all transform hover:scale-105 uppercase text-xs md:text-sm border border-[#005cbf]">Abrir las Puertas</button>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex flex-col items-start pb-0 relative z-0">
+                <div class="w-36 h-4 stone-3d rounded-t-sm"></div>
+                <div class="w-48 h-6 stone-3d rounded-t-sm flex justify-evenly items-end pb-1"></div>
+                <div class="w-64 h-56 stone-3d flex justify-between items-end pb-0 px-2">
+                    <div class="w-6 h-full pillar-3d z-10"></div>
+                    <div class="w-16 h-36 arch-inner rounded-t-full relative flex justify-center items-end pb-2"><div class="w-8 h-20 window-3d rounded-t-full"></div></div>
+                    <div class="w-6 h-full pillar-3d z-10"></div>
+                    <div class="w-16 h-36 arch-inner rounded-t-full relative flex justify-center items-end pb-2"><div class="w-8 h-20 window-3d rounded-t-full"></div></div>
+                    <div class="w-6 h-full pillar-3d z-10"></div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="w-full max-w-[95%] md:max-w-5xl h-4 md:h-6 stone-3d shadow-lg rounded-sm mt-[-2px] z-30"></div>
+        <div class="w-full max-w-full md:max-w-7xl h-4 md:h-6 stone-3d shadow-2xl rounded-sm z-20"></div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
